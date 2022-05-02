@@ -1,7 +1,7 @@
 {
   "name": "poc-server",
   "version": "1.0.0",
-  "description": "",
+  "description": "> View the full [Vonage Video Blueprint article](https://developer.mypurecloud.com/blueprints/vonage-video-blueprint/) on the Genesys Cloud Developer Center.",
   "main": "index.js",
   "scripts": {
     "start-server": "node web-server"
@@ -9,9 +9,20 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.20.0",
     "ejs": "^3.1.3",
-    "express": "^4.17.1",
+    "express": "^4.18.1",
+    "fs": "^0.0.1-security",
+    "https": "^1.0.0",
     "opentok": "^2.10.0",
     "purecloud-platform-client-v2": "^85.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mbrzozo/vonage-video-blueprint.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mbrzozo/vonage-video-blueprint/issues"
+  },
+  "homepage": "https://github.com/mbrzozo/vonage-video-blueprint#readme"
 }

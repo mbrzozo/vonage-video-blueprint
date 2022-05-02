@@ -1,5 +1,5 @@
 module.exports = {
-    expressPort: 443,
+    expressPort: 444,
     testMode: false, 
     appURI: 'https://localhost/',
 

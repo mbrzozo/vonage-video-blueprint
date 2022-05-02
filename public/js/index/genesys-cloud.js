@@ -139,18 +139,21 @@ function sendLinkToChat(){
             view.showInfoModal('Sorry. This conversation is not a Webchat.');
             return null;
         }        
-        let chats = agentParticipant.chats;
+        let chats = agentParticipant.messages;
+        console.log(agentParticipant)
 
         // Get last id just in case there are multiple
         communicationId = chats[chats.length - 1].id;
 
         // Send the chat message
-        return conversationsApi.postConversationsChatCommunicationMessages(
+       // return conversationsApi.postConversationsChatCommunicationMessages
+       let body = "`Please join my Vonage Video Room at: ${appURI.replace(/\/+$/, '')}/room/customer/${conversationId}?username=${encodeURIComponent(customerName)}`"
+        return conversationsApi.postConversationsMessageCommunicationMessages(
             conversationId,
             communicationId,
             {
-                body: `Please join my Vonage Video Room at: ${appURI.replace(/\/+$/, '')}/room/customer/${conversationId}?username=${encodeURIComponent(customerName)}`,
-                bodyType: 'standard'
+                textBody: `Please join my Vonage Video Room at: ${appURI.replace(/\/+$/, '')}/room/customer/${conversationId}?username=${encodeURIComponent(customerName)}`,
+               
             }
         )
     })
@@ -276,10 +279,11 @@ function getCurrentCustomerEmail(){
  */
 function initializeClientApp(){
     let ClientApp = window.purecloud.apps.ClientApp;
+    console.log(urlParams.get('conversationid'));
     let envParam = urlParams.get(ENV_QUERY_PARAM);
-
+    //console.log(urlParams);
     if(!envParam){
-        envParam = localStorage.getItem('clientAppEnvironment') || 'mypurecloud.com';
+        envParam = localStorage.getItem('clientAppEnvironment') || 'mypurecloud.de';
     }
     vonageClientApp = new ClientApp({ pcEnvironment: envParam });
     localStorage.setItem('clientAppEnvironment', envParam);
@@ -291,8 +295,9 @@ function initializeClientApp(){
 function initializeApp(){
     // Determine environment for Genesys Cloud
     let gCloudEnv = urlParams.get(ENV_QUERY_PARAM);
+    console.log(ENV_QUERY_PARAM);
     if(!gCloudEnv){
-        gCloudEnv = localStorage.getItem('clientAppEnvironment') || 'mypurecloud.com';
+        gCloudEnv = localStorage.getItem('clientAppEnvironment') || 'mypurecloud.de';
     }
     localStorage.setItem('clientAppEnvironment', gCloudEnv);
 
