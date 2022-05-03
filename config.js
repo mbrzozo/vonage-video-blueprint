@@ -1,7 +1,7 @@
 module.exports = {
     expressPort: 443,
     testMode: false, 
-    appURI: 'https://localhost/',
+    appURI: 'http://18.158.222.102/',
 
 
     vonage: {
