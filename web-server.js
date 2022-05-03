@@ -8,14 +8,20 @@ const port = config.expressPort;
 const vonageApp = require('./vonage-server-app.js')
 
 // Web server
-const sslOptions = {
-    key: fs.readFileSync('https-requirements/localhost.key'),
-    cert: fs.readFileSync('https-requirements/localhost.crt'),
-    ca: fs.readFileSync('https-requirements/ca.crt'),
-    requestCert: true,
-    rejectUnauthorized: false
-};
-const httpsServer = https.createServer(sslOptions, app);
+//const sslOptions = {
+//    key: fs.readFileSync('https-requirements/localhost.key'),
+  //  cert: fs.readFileSync('https-requirements/localhost.crt'),
+    //ca: fs.readFileSync('https-requirements/ca.crt'),
+    //requestCert: true,
+    //rejectUnauthorized: false
+//};
+
+var privateKey = fs.readFileSync('https-requirements/server.key');
+var certificate = fs.readFileSync('https-requirements/server.crt');
+
+var credentials = {key: privateKey, cert: certificate};
+
+const httpsServer = https.createServer(credentials, app);
 
 // Constants
 const appURI = config.appURI;
