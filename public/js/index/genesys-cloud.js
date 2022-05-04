@@ -108,7 +108,7 @@ function getInvitationMessage(){
     const customerParticipant = currentConversation.participants.find(p => 
         p.purpose == 'customer');
     const customerName = customerParticipant.name || '<No Name>';
-    const message = `Please join my Vonage Video Room at: ${appURI.replace(/\/+$/, '')}/room/customer/${conversationId}?username=${encodeURIComponent(customerName)}`;
+    const message = `Please join my OBS Video Room at: ${appURI.replace(/\/+$/, '')}/room/customer/${conversationId}?username=${encodeURIComponent(customerName)}`;
     
     return message;
 }
@@ -140,14 +140,14 @@ function sendLinkToChat(){
             return null;
         }        
         let chats = agentParticipant.messages;
-        console.log(agentParticipant)
+       // console.log(agentParticipant)
 
         // Get last id just in case there are multiple
         communicationId = chats[chats.length - 1].id;
 
         // Send the chat message
        // return conversationsApi.postConversationsChatCommunicationMessages
-       let body = "`Please join my Vonage Video Room at: ${appURI.replace(/\/+$/, '')}/room/customer/${conversationId}?username=${encodeURIComponent(customerName)}`"
+       let body = "`Please join my OBS Video Room at: ${appURI.replace(/\/+$/, '')}/room/customer/${conversationId}?username=${encodeURIComponent(customerName)}`"
         return conversationsApi.postConversationsMessageCommunicationMessages(
             conversationId,
             communicationId,
