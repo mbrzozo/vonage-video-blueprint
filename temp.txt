@@ -1,0 +1,3 @@
+https://api.mypurecloud.de/api/v2/conversations/messages/bcc4bc83-30c1-4afe-b888-03fa93ee12d1/communications/bb0a3f1e-1e45-4ea4-bbb4-9836a4014947/messages
+
+allow-scripts,allow-same-origin,allow-forms,allow-modals,allow-downloads,allow-popups,allow-presentation
