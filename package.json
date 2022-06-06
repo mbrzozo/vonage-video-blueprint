@@ -15,7 +15,8 @@
     "fs": "^0.0.1-security",
     "https": "^1.0.0",
     "opentok": "^2.10.0",
-    "purecloud-platform-client-v2": "^85.0.0"
+    "purecloud-platform-client-v2": "^85.0.0",
+    "ws": "^8.7.0"
   },
   "repository": {
     "type": "git",
