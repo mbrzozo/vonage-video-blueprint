@@ -1,1 +1,4 @@
 https://localhost/?conversationid={pcConversationId}&language={pcLangTag}&environment={pcEnvironment}
+
+![company logo](https://help.mypurecloud.com/wp-content/uploads/2018/08/favicon-128.png "Genesys Logo")
+![company logo](https://contentmanagement.mypurecloud.de/s/#/1/c6qdddhvsvhylmwkg7yer5gxrm "HP logo")
